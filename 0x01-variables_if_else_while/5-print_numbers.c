@@ -2,7 +2,7 @@
 
 /**
  *main - print 0123456789
- *Return: Alwaays 0 (Success)
+ *Return: Always 0 (Success)
  */
 
 int main(void)
@@ -11,7 +11,7 @@ int main(void)
 
 	while (n < 10);
 	{
-		printf("%i, n);
+		printf("%i", n);
 		n++;
 	}
 	putchar('\n');
