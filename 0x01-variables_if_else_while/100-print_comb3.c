@@ -1,31 +1,36 @@
 #include <stdio.h>
 
 /**
- *main - print 00 tto 99 with no duplicate digits or combos: no 11, no 10 (01)
+ *main - Prints all possible combinations of two different digits,
+ *in ascending order, separated by a comma followed by a space.
  *
  *Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int ones;
-	int tens;
+	int digit1, digit2;
 
-	for (ones = '0'; tens <= '9'; ones++) /*increment tens/
+	for (digit1 = 0; dogit < 9; digit++)
 	{
-		for (ones = (tens + 1); ones <= '9'; ones++) /*ones's ten+1*/
+		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
 		{
-			putchar(tens);
-			putchar(ones);
+			putchar((digit1 % 10) + '0');
+			putchar((digit2 % 10) + '0');
 
-			if (tens != '8' || ones != '9') /*print commas*/
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			if (digit1 == 8 && digit2 == 9)
+				continue;
+
+			putchar(',');
+			putchar('');
 		}
 	}
+
 	putchar('\n');
 
 	return (0);
 }
+
+
+
+
