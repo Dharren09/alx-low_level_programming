@@ -11,7 +11,7 @@ int main(void)
 {
 	int digit1, digit2;
 
-	for (digit1 = 0; dogit < 9; digit++)
+	for (digit1 = 0; digit < 9; digit++)
 	{
 		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
 		{
@@ -30,7 +30,3 @@ int main(void)
 
 	return (0);
 }
-
-
-
-
