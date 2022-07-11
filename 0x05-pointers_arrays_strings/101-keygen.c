@@ -10,26 +10,27 @@
  */
 int main(void)
 {
-	int i, sum, n;
-	int pass[100];
-
-	sum = 0;
+	char k[200];
+	int num = 0;
+	int random = 0;
+	char *key = k;
 
 	srand(time(NULL));
 
-	for (i = 0; i < 100; i++)
+	while (num < 2645)
 	{
-		pass[i] = rand() % 78;
-		sum += (pass[i] = '0');
-		putchar(pass[i] = '0');
-		if ((2772 - sum) - '0' < 78)
+		random = rand() % 122;
+
+		if (random > 32)
 		{
-			n = 2772 - sum - '0';
-			sum += n;
-			putchar(n + '0');
-			break;
+			*key = random;
+			key = key + 1;
+			num += random;
 		}
 	}
 
+	*key = (2772 - num);
+	*(key + 1) = '\n';
+	printf("%s", k);
 	return (0);
 }
