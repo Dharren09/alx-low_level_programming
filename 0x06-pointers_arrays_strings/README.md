@@ -1,1 +1,1 @@
-strcat
+strncpy
