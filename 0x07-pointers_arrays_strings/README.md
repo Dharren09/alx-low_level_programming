@@ -1,1 +1,1 @@
-The line of life is a ragged diagonal between duty and desire
+Dounle pointer, double fun
