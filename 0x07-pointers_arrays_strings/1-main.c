@@ -36,7 +36,7 @@ void simple_print_buffer(char *buffer, unsigned int size)
  */
 int main(void)
 {
-	char bbuffer[98] = {0};
+	char buffer[98] = {0};
 	char buffer2[98] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
 	simple_print_buffer(buffer, 98);
