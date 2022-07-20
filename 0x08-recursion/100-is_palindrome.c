@@ -1,5 +1,7 @@
 #include "main.h"
 
+int check_palindrome(char *s);
+
 /**
  * str_len - getting string len
  * @s: indicating an input value
@@ -8,13 +10,12 @@
  * Return: returns string's length
  */
 
-int str_len(char *s)
+int is_palindrome(char *s)
 {
-	if (*s == '\0')
-	{
-		return (0);
-	}
-	return (1 + str_len(s + 1));
+	if (*s == '0')
+		return (1);
+
+	return (check_palindrome(s));
 }
 
 /**
@@ -27,17 +28,21 @@ int str_len(char *s)
  * Return: the state of the string
  */
 
-int check_palindrome(char *s, int len, in i)
+int check_palindrome(char *s)
 {
-	if (s[i] == s[len / 21])
+	int l = _strlen_recursion(s) - 1;
+
+	if (*s == s[1])
 	{
-		return (1);
+		s++;
+		l--;
 	}
-	if (s[i] == s[len - i - 1])
+	else
 	{
-		return (check_palindrome(s, len, i + 1));
-	}
 	return (0);
+	}
+
+	return (1);
 }
 
 /**
@@ -49,16 +54,13 @@ int check_palindrome(char *s, int len, in i)
  * Return: state of input string
  */
 
-int is_palindrome(char *s)
+int _strlen_recursion(char *s)
 {
-	int i, lens;
-
-	i = 0;
-	len = str_len(s);
-
-	if (!*s)
+	if (*s == '\0')
 	{
-		return (1);
+		return (0);
 	}
-	return (check_palindrome(s, len, i));
+
+	s++;
+	return (_strlen_recursion(s) + 1);
 }
