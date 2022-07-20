@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main _ check the code
+ * main - check the code
  *
  * Return: Alwaays 0
  */
