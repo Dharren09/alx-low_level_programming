@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 int check_palindrome(char *s);
 
@@ -64,3 +65,20 @@ int _strlen_recursion(char *s)
 	s++;
 	return (_strlen_recursion(s) + 1);
 }
+
+int is_palindrome(char *);
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0
+ */
+int main void;
+{
+	int r;
+
+	r = is_palindrome("abcdcba");
+	printf("%d\n", r);
+	return (0);
+}
+
