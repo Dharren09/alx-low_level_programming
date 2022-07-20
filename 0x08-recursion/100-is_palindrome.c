@@ -1,84 +1,51 @@
 #include "main.h"
-#include <stdio.h>
-
-int check_palindrome(char *s);
 
 /**
- * str_len - getting string len
- * @s: indicating an input value
+ * check - checker for the palindrome
  *
- * Dest: finding the length of a string
- * Return: returns string's length
+ * @s: String
+ * @start: int moves from right to left
+ * @end: int move left to right
+ * @pair: int
+ * Return: 0 or 1
  */
+int check(char *s, int start, int end, int pair)
+{
+	if ((start == end && pair != 0) || (start == end + 1 && pair == 0))
+		return (1);
+	else if (s[start] != s[end])
+		return (0);
+	else
+		return (check(s, start + 1, end - 1, pair));
+}
 
+/**
+ * last_index - Returns the last index of a string (counts the null char)
+ *
+ * @s: Pointer the string
+ *
+ * Return: int
+ */
+int last_index(char *s)
+{
+	int n = 0;
+
+	if (*s > '\0')
+		n += last_index(s + 1) + 1;
+
+	return (n);
+}
+
+/**
+ * is_palindrome - Check if a string is a palindrome
+ *
+ * @s: String to check
+ *
+ * Return: 0 or 1
+ */
 int is_palindrome(char *s)
 {
-	if (*s == '0')
-		return (1);
+	int end = last_index(s);
 
-	return (check_palindrome(s));
+	return (check(s, 0, end -1, end % 2));
 }
-
-/**
- * is_palindrome - checks for a palindrome
- * @s: input character
- * @i: an interactor
- * @len: string length indicator
- *
- * Dest: checking if a string is a palindrome
- * Return: the state of the string
- */
-
-int check_palindrome(char *s)
-{
-	int l = _strlen_recursion(s) - 1;
-
-	if (*s == s[1])
-	{
-		s++;
-		l--;
-	}
-	else
-	{
-	return (0);
-	}
-
-	return (1);
-}
-
-/**
- * is_palindrome - print palindrome
- * @s: input string
- *
- * Dest: return 1 if a string is a
- * Palindrome and 0 if not
- * Return: state of input string
- */
-
-int _strlen_recursion(char *s)
-{
-	if (*s == '\0')
-	{
-		return (0);
-	}
-
-	s++;
-	return (_strlen_recursion(s) + 1);
-}
-
-int is_palindrome(char *);
-
-/**
- * main - check the code
- *
- * Return: Always 0
- */
-int main void;
-{
-	int r;
-
-	r = is_palindrome("abcdcba");
-	printf("%d\n", r);
-	return (0);
-}
-
