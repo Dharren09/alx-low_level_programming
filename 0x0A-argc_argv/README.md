@@ -1,1 +1,1 @@
-To infinity and beyond
+Minimal Number od Coins for Change
