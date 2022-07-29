@@ -1,5 +1,18 @@
 #include "main.h"
 #include <stdlib.h>
+/**
+ * _strlen - calculate and return string length
+ * @string: string
+ * Return: string length
+ */
+int _strlen(char *string)
+{
+	int i;
+
+	for (i = 0; string[i] != '\0'; i++)
+		;
+	return (i);
+}
 
 /**
  * string_concat - ...
@@ -11,42 +24,31 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, j = 0, k = 0, l = 0;
-	char *str;
+	char *ptr;
+	int num, len, i, j;
+
+	num = n;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+	if (num < 0)
+		return (NULL);
+	if (num >= _strlen(s2))
+		num = _strlen(s2);
 
-	while (s2[i])
-		i++;
+	len = _strlen(s1) + num + 1;
 
-	while (s2[k])
-		k++;
-
-	if (n >= k)
-		l = i + k;
-	else
-		l = i + n;
-
-	str = malloc(sizeof(char) * l + 1);
-	if (str == NULL)
+	ptr = malloc(sizeof(*ptr) * len);
+	if (ptr == NULL)
 		return (NULL);
 
-	k = 0;
-	while (j < l)
-	{
-		if (j <= i)
-			str[j] = s1[j];
+	for (i = 0; s1[i] != '\0'; i++)
+		ptr[i] = s1[i];
+	for (j = 0; j < num; j++)
+		ptr[i + j] = s2[j];
+	ptr[i + j] = '\0';
 
-		if (j >= i)
-		{
-			str[j] = s2[k];
-			k++;
-		}
-		j++;
-	}
-	str[j] = '\0';
-	return (str);
+	return (ptr);
 }
