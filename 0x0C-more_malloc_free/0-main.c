@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * main - check the code
@@ -15,7 +16,7 @@ int main(void)
 	double *d;
 
 	c = malloc_checked(sizeof(char) * 1024);
-	printf("%p\n", (void *c)c);
+	printf("%p\n", (void *)c);
 	i = malloc_checked(sizeof(int) * 402);
 	printf("%p\n", (void *)i);
 	f = malloc_checked(sizeof(float) * 100000000);
