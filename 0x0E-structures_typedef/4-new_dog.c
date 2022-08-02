@@ -6,7 +6,7 @@
  * @src: Data to make copy
  * Return: pointer
  */
-chr *_copy(char *src)
+char *_copy(char *src)
 {
 	char *ptr;
 	int i, len;
@@ -61,7 +61,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_name = _copy(name);
 	if (new_name == NULL)
 	{
-		free(scoopie);
+		free(snoopie);
 		return (NULL);
 	}
 	(*snoopie).name = new_name;
@@ -71,11 +71,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_owner = _copy(owner);
 	if (new_owner == NULL)
 	{
-		free((*scoopie).name);
-		free(scoopie);
+		free((*snoopie).name);
+		free(snoopie);
 		return (NULL);
 	}
-	(*scoopie).owner = new_owner;
+	(*snoopie).owner = new_owner;
 
-	return (scoopie);
+	return (snoopie);
 }
