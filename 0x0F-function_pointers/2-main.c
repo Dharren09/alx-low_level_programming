@@ -50,5 +50,5 @@ int main(void)
 	printf("%d\n", index);
 	index = int_index(array, 20, is_strictly_positive);
 	printf("%d\n", index);
-	retturn (0);
+	return (0);
 }
