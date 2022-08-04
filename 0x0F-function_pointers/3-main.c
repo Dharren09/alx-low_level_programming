@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
 	if (!oprt)
 	{
-		print("Error\n");
+		printf("Error\n");
 		exit(99);
 	}
 
