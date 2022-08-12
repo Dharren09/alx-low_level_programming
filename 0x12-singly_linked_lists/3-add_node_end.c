@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "lists.h"
 #include "strlen.c"
+#include <stdlib.h>
 
 list_t *createNewNode(const char *str);
 
@@ -33,7 +34,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	else
 	{
-		*head = createNewMode(str);
+		*head = createNewNode(str);
 	}
 
 		return (*head);
@@ -50,20 +51,19 @@ list_t *createNewNode(const char *str)
 {
 	list_t *new_node_ptr = malloc(sizeof(list_t));
 
-	if (new_mode_ptr)
+	if (new_node_ptr)
 		return (NULL);
 
-	new_mode_ptr->str = strdup(str);
+	new_node_ptr->str = strdup(str);
 
-	if (!(new_mode_ptr->str))
+	if (!(new_node_ptr->str))
 	{
-		free(new_mode_ptr);
+		free(new_node_ptr);
 		return (NULL);
 	}
 
-	new_node_ptr->len = _strLen(new_node_ptr->str);
+	new_node_ptr->len = _strlen(new_node_ptr->str);
 	new_node_ptr->next = NULL;
 
 	return (new_node_ptr);
 }
-			

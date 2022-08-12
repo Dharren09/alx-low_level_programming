@@ -1,17 +1,17 @@
-section .data
-	msg: db "Hello, Holberton", 0x0a
-	msglen equ $-msg
+section .rodata
+	msg: db "Hello, Holberton", 10
+	msglen equ $ - msg
 
 section .text
 	global main
 
 main:
 	; write HelloHolberton to screen
-	mov eax, 1 ; syscall for write
-	mov edi, 1
+	mov rax, 1 ; syscall for write
+	mov rdi, 1
 	mov rsi, msg
-	move edx, msglen
+	move rdx, msglen
 	syscall
-	mov eax, 60 ; 60 is exit
-	xor edi, edi ; exit (0)
+	mov rax, 60 ; 60 is exit
+	xor rdi, edi ; exit (0)
 	syscall
