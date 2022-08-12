@@ -1,8 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
-#include "strlen.c"
 #include "lists.h"
-
+#include "strlen.c"
 /**
  * add_node - Adds a new node at the beginning of list_t list
  * @new_head: Address of node
@@ -12,18 +11,22 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_node_ptr = malloc(sizeof(list_t));
+	list_t *temp;
 
-	if (new_head == NULL)
+	if (head != NULL && str != NULL)
 	{
-		return (NULL);
+		temp = malloc(sizeof(list_t));
+		if (temp == NULL)
+			return (NULL);
+
+		temp->str = strdup(str);
+		temp->len = _strlen(str);
+		temp->next = *head;
+
+		*head = temp;
+
+		return (temp);
 	}
-	else
-	{
-		new_head->str = strdup(str);
-		new_head->len = length;
-		new_head->next = *head;
-		*head = new;
-		return (new_head);
-	}
+
+	return (0);
 }
