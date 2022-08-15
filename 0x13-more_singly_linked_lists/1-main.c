@@ -12,7 +12,7 @@ int main(void)
 {
 	listint_t *head;
 	listint_t *new;
-	listtint_t hello = {8, NULL};
+	listint_t hello = {8, NULL};
 	size_t n;
 
 	head = &hello;
@@ -25,7 +25,7 @@ int main(void)
 	new->n = 9;
 	new->next = head;
 	head = new;
-	n = listit_len(head);
+	n = listint_len(head);
 	printf("-> %lu elements\n", n);
 	free(new);
 	return (0);
