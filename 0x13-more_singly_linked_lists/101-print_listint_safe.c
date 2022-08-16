@@ -14,7 +14,7 @@ listadd_t *add_nodeaddress(listadd_t **head, const listint_t *address)
 	listadd_t *new;
 
 	new = malloc(sizeof(listint_t));
-	if (new== NULL)
+	if (new == NULL)
 	{
 		free_listadd(*head);
 		exit(98);
