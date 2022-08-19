@@ -12,7 +12,7 @@ void print_binary(unsigned long int n)
 
 	revnum = count = 0;
 	if (n == 0)
-		_putchar('0');
+		putchar('0');
 	while (n > 0)
 	{
 		revnum = revnum << 1;
@@ -22,7 +22,7 @@ void print_binary(unsigned long int n)
 	}
 	while (revnum > 0)
 	{
-		_putchaar((revnum & 1) + '0');
+		putchar((revnum & 1) + '0');
 		revnum = revnum >> 1;
 		count--;
 	}
@@ -30,7 +30,7 @@ void print_binary(unsigned long int n)
 	{
 		while (count != 0)
 		{
-			_putchar(')');
+			putchar('0');
 			count--;
 		}
 	}
