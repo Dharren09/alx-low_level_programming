@@ -1,1 +1,1 @@
->>> ht = {}
+ $ht['Betty'] = 'Cool'
