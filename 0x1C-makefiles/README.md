@@ -1,1 +1,1 @@
-make -f 0-Makefile
+make -f 100-Makefile
